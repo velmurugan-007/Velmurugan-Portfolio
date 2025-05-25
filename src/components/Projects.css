@@ -1,0 +1,201 @@
+/* Animated gradient background for the projects section */
+.projects-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(270deg, #9ac3d2, #101111, #30388b);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  color: #e0e7ff;
+  min-height: 100vh;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #dbe644; /* amber color */
+  text-shadow: 0 0 8px #fbbf24cc;
+}
+
+/* Flip card container */
+.flip-card {
+  perspective: 1500px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.35);
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inner container for flip effect */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: inset 0 0 40px rgb(255 255 255 / 0.1);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.flip-card-front {
+  background: rgba(30, 60, 114, 0.9);
+  color: #f0f9ff;
+}
+
+.flip-card-back {
+  background: rgba(42, 82, 152, 0.95);
+  color: #fbbf24;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* Icon set */
+.icon-set {
+  font-size: 2.4rem;
+  color: #fbbf24;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Project title */
+.project-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #fbbf24aa;
+}
+
+/* Summary on front */
+.project-summary {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+/* Confidence bar */
+.confidence-bar {
+  background-color: #fbbf2455;
+  border-radius: 20px;
+  height: 22px;
+  overflow: hidden;
+  box-shadow: inset 0 0 6px #fbbf24aa;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  color: #222;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  transition: width 0.6s ease;
+  font-size: 0.85rem;
+}
+
+/* Back description */
+.project-desc {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  color: #fff3c4;
+}
+
+/* Tech badges */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-pill {
+  background: #fbbf24;
+  color: #222;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* Note text */
+.note {
+  font-size: 0.8rem;
+  color: #fbbf2433;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 991px) {
+  .flip-card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 575px) {
+  .projects-section {
+    padding: 40px 10px;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .flip-card {
+    height: 380px;
+  }
+  .project-desc {
+    font-size: 0.9rem;
+  }
+  .icon-set {
+    font-size: 2rem;
+    gap: 10px;
+  }
+  .tech-pill {
+    font-size: 0.75rem;
+  }
+}

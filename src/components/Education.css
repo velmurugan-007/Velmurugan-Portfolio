@@ -1,0 +1,178 @@
+/* Container & Section base */
+.education-section {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2, #6b8dd6);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subtle floating shapes */
+.education-section::before,
+.education-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: floatUpDown 15s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.education-section::before {
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.education-section::after {
+  width: 150px;
+  height: 150px;
+  background: #ffd700;
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 7.5s;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+/* Container for content */
+.education-section .container {
+  max-width: 800px;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Section Title */
+.education-section .section-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.4),
+    0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Education card style */
+.education-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 12px 48px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Headings and text inside cards */
+.education-card h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.education-card p,
+.education-card small {
+  font-size: 1rem;
+  color: #eee;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+
+/* Small devices - phones */
+@media (max-width: 575.98px) {
+  .education-section {
+    padding: 40px 15px;
+  }
+
+  .education-section .section-title {
+    font-size: 2rem;
+  }
+
+  .education-card {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .education-card h5 {
+    font-size: 1.2rem;
+  }
+
+  .education-card p,
+  .education-card small {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium devices - tablets */
+@media (max-width: 768px) {
+  .education-section {
+    padding: 50px 20px;
+  }
+
+  .education-section .section-title {
+    font-size: 2.5rem;
+  }
+
+  .education-card {
+    padding: 1.5rem 1.8rem;
+  }
+
+  .education-card h5 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Large devices - small laptops */
+@media (max-width: 992px) {
+  .education-section {
+    padding: 60px 25px;
+  }
+
+  .education-section .section-title {
+    font-size: 2.75rem;
+  }
+
+  .education-card {
+    padding: 1.8rem 2rem;
+  }
+}

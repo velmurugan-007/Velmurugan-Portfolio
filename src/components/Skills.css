@@ -1,0 +1,116 @@
+.skills-section {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skill-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #e0e0e0;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.skill-icon {
+  color: #00ffff;
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+/* Animated glowing circles background */
+.background-animation {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(0, 255, 255, 0.1), transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(0, 255, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.1), transparent 40%);
+  animation: pulse 6s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    background-position:
+      20% 20%,
+      80% 30%,
+      40% 70%,
+      70% 80%;
+    opacity: 0.7;
+  }
+  100% {
+    background-position:
+      25% 25%,
+      75% 35%,
+      45% 65%,
+      65% 85%;
+    opacity: 1;
+  }
+}
+/* Small devices - phones */
+@media (max-width: 575.98px) {
+  .skills-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .skill-card {
+    font-size: 0.9rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* Medium devices - tablets */
+@media (max-width: 768px) {
+  .skills-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .skill-card {
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  .skill-icon {
+    font-size: 1.3rem;
+  }
+}
+
+/* Large devices - small laptops */
+@media (max-width: 992px) {
+  .skill-card {
+    font-size: 1.05rem;
+    padding: 1.3rem;
+  }
+
+  .skill-icon {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
+
+

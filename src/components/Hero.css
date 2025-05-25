@@ -1,0 +1,262 @@
+/* Hero.css */
+
+.hero-section {
+  position: relative;
+  padding: 80px 20px;
+  background: #0f2027;  /* nice dark gradient background */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 10;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #a0c4ff;
+  margin-bottom: 1rem;
+  min-height: 2rem;
+}
+
+.hero-location {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #caf0f8;
+}
+
+.hero-summary {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 2rem auto;
+  color: #e0e0e0;
+}
+
+.hero-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+.icon-link {
+  color: #ffffffcc;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover,
+.icon-link:focus {
+  color: #90cdf4;
+  outline: none;
+}
+
+/* Fade-in utility class for other elements */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax blobs styles */
+.blobs {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+.blob1 {
+  width: 250px;
+  height: 250px;
+  background: #111110;
+  top: 0;
+  left: -120px;
+}
+
+.blob2 {
+  width: 300px;
+  height: 300px;
+  background: #5ff2ff;
+  top: 60px;
+  right: -130px;
+}
+
+.blob3 {
+  width: 200px;
+  height: 200px;
+  background: #313038;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Typing cursor effect for subtitle */
+.typing {
+  border-right: 2px solid #90cdf4;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+
+/* Small devices (phones, up to 600px) */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .hero-location {
+    font-size: 1rem;
+  }
+  .hero-summary {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .hero-icons {
+    gap: 20px;
+    font-size: 1.5rem;
+  }
+  .blob1 {
+    width: 150px;
+    height: 150px;
+    left: -80px;
+  }
+  .blob2 {
+    width: 180px;
+    height: 180px;
+    right: -90px;
+    top: 30px;
+  }
+  .blob3 {
+    width: 120px;
+    height: 120px;
+    bottom: -30px;
+  }
+}
+
+/* Medium devices (tablets, 601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.35rem;
+  }
+  .hero-location {
+    font-size: 1.1rem;
+  }
+  .hero-summary {
+    font-size: 1.1rem;
+    max-width: 85%;
+  }
+  .hero-icons {
+    gap: 25px;
+    font-size: 1.6rem;
+  }
+  .blob1 {
+    width: 200px;
+    height: 200px;
+    left: -100px;
+  }
+  .blob2 {
+    width: 240px;
+    height: 240px;
+    right: -110px;
+    top: 45px;
+  }
+  .blob3 {
+    width: 160px;
+    height: 160px;
+    bottom: -40px;
+  }
+}
+
+/* Large devices (desktops, 901px and above) */
+@media (min-width: 901px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  .hero-location {
+    font-size: 1.2rem;
+  }
+  .hero-summary {
+    font-size: 1.15rem;
+    max-width: 650px;
+  }
+  .hero-icons {
+    gap: 30px;
+    font-size: 1.8rem;
+  }
+  .blob1 {
+    width: 250px;
+    height: 250px;
+    left: -120px;
+  }
+  .blob2 {
+    width: 300px;
+    height: 300px;
+    right: -130px;
+    top: 60px;
+  }
+  .blob3 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
