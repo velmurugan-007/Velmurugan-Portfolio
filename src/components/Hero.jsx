@@ -7,7 +7,7 @@ function Hero() {
   const blob2Ref = useRef(null);
   const blob3Ref = useRef(null);
   const [typedText, setTypedText] = useState('');
-  const fullText = 'React Developer | Java Full Stack Enthusiast';
+  const fullText = 'React|Java Full Stack Developer';
 
   // Typing effect
   useEffect(() => {
